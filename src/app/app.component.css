@@ -1,0 +1,36 @@
+.sponsor {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.sponsor .row {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.sponsor .col {
+    flex: 0 0 auto;
+    width: 200px;  
+    margin-right: 10px;  
+}
+
+.sponsor-img {
+    width: 100%;
+    height: auto;
+}
+
+.sponsor::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;  
+    background-color: #f5f5f5;  
+}
+
+.sponsor::-webkit-scrollbar-thumb {
+    background-color: #888;  
+    border-radius: 4px; 
+}
+
+.sponsor::-webkit-scrollbar-thumb:hover {
+    background-color: #555;  
+}
+

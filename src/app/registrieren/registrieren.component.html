@@ -1,0 +1,65 @@
+<div class="border p-4" id="registerPilot">
+  <div class="d-flex">
+    <img id="registrationProfilePicture" src="assets/default.png" style="width: 30%; border-radius: 10px;">
+    <div style="width: 90%;">
+      <label for="name" style="margin-left: 5%">Name:</label>
+      <input id="name" class="form-control" type="text" style="width:95%; margin-left: 5%" [formControl]="myForm.controls.name"
+        placeholder="Enter your name" required />
+      <div *ngIf="myForm.controls.name.touched && myForm.controls.name.errors?.required" class="text-danger">
+        Name is required.
+      </div>
+
+      <label for="email" style="margin-left: 5%">Email: </label>
+      
+        <input id="email" class="form-control" type="email" style="width:95%; margin-left: 5%" [formControl]="myForm.controls.email"
+          placeholder="Enter your email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" />
+        <div *ngIf="myForm.controls.email.touched && myForm.controls.email.errors?.required" class="text-danger">
+          Email is required.
+        </div>
+        <div *ngIf="myForm.controls.email.touched && myForm.controls.email.errors?.pattern" class="text-danger">
+          Invalid Email.
+        </div>
+        </div>
+        </div>
+
+  <br>
+  <br>
+  <button style="margin-right: 1%;" type="button" class="btn btn-primary" (click)="openFileDialog()">Bild
+    auswählen</button>
+  <button type="button" class="btn btn-danger" (click)="deleteImage()">Bild löschen</button>
+  <form [formGroup]="myForm">
+    <hr>
+    <div class="form-group">
+      <div class="form-check"></div>
+      <input class="form-check-input" type="checkbox" id="agreeCheckbox"  (change)="termsAccepted=!termsAccepted"/>
+      <label class="form-check-label" for="agreeCheckbox">
+        Ich stimme den Nutzungsbedingungen zu
+      </label>
+
+      <br>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="agreeCheckbox" (change)="showAdditionalCheckboxes(); " />
+      <label class="form-check-label" for="agreeCheckbox">
+        Ja, ich möchte am Wettbewerb Teilnehmen
+      </label>
+    </div>
+    <div id="additionalCheckboxes" style="display: none">
+      <!-- *ngIf="showAdditionalCheckboxes" -->
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="scaleCheckbox" />
+        <label class="form-check-label" for="scaleCheckbox">Scale</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="speedCheckbox" />
+        <label class="form-check-label" for="speedCheckbox">Speed</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="3dCheckbox" />
+        <label class="form-check-label" for="3dCheckbox">3D</label>
+      </div>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary" (click)="Submit(formData)" [disabled]="myForm.controls.name.errors?.required || myForm.controls.email.errors?.required.pattern || myForm.controls.email.errors?.required || myForm.controls.email.errors?.pattern || termsAccepted==false || myForm.controls.email.errors?.pattern">Registrieren</button>
+    </form>
+</div>

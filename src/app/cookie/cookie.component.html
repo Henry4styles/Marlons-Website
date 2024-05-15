@@ -1,0 +1,11 @@
+ 
+        <div *ngIf="!cookiesAsked" class="cookie-popup" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 9999; background-color: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center;">
+            <div class="popup-content" style="background-color: #f8f9fa; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
+                <p style="font-size: 16px; line-height: 1.5; margin-bottom: 10px;">Diese Website verwendet Cookies. Stimmen Sie dem zu?</p>
+                <div style="display: flex; justify-content: center; margin-top: 10px;">
+                    <button class="reject-button btn btn-danger" (click)="cookiesDeniedreq()">Ablehnen</button>
+                    <button class="accept-button btn btn-success" style="margin-left: 10px;" (click)="cookiesAcceptedreq()">Akzeptieren</button>
+                </div>
+            </div>
+        </div>
+       

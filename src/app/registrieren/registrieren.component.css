@@ -1,0 +1,5 @@
+#registrationProfilePicture {
+    aspect-ratio: 1;
+    object-position: center;
+    object-fit: cover;
+}

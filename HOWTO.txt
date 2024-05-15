@@ -1,0 +1,7 @@
+
+// npm update
+npm install -g npm
+
+// eine neue react app erstellen / vorbereiten
+npm create-react-app [name in lowercase]
+
