@@ -1,0 +1,6 @@
+@RECH_HostAddress = http://localhost:5118
+
+GET {{RECH_HostAddress}}/getPilots/
+Accept: application/json
+
+###
